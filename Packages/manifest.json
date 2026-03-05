@@ -1,0 +1,24 @@
+{
+  "name": "com.sukeybyte.fitdungeon",
+  "version": "0.1.0",
+  "displayName": "FitDungeon",
+  "description": "双人健身肉鸽游戏 - 通过摄像头识别动作进行战斗",
+  "unity": "2022.3",
+  "unityRelease": "0f1",
+  "dependencies": {
+    "com.unity.2d.sprite": "1.0.0",
+    "com.unity.2d.tilemap": "1.0.0",
+    "com.unity.render-pipelines.universal": "14.0.0"
+  },
+  "keywords": [
+    "fitness",
+    "game",
+    "roguelike",
+    "multiplayer",
+    "pose-detection"
+  ],
+  "author": {
+    "name": "SukeyByte",
+    "url": "https://github.com/SukeyByte"
+  }
+}

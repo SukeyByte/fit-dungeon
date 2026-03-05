@@ -14,11 +14,21 @@
 
 | 组件 | 方案 |
 |-----|------|
-| 框架 | Flutter |
-| 姿态识别 | Google ML Kit Pose Detection |
-| 游戏引擎 | Flame (Flutter) |
-| 状态管理 | Riverpod |
+| 游戏引擎 | **Unity 2022 LTS** |
+| 渲染管线 | 2D URP (Universal Render Pipeline) |
+| 摄像头 | WebCamTexture |
+| 姿态识别 | MediaPipe Unity Plugin / Nuitrack |
 | 版本控制 | Git + GitHub |
+
+---
+
+## 为什么选择 Unity
+
+1. **专业游戏引擎** — 粒子效果、动画、物理引擎内置
+2. **像素游戏友好** — Pixel Perfect Camera、2D Tilemap
+3. **摄像头简单** — `WebCamTexture` 一行代码搞定
+4. **资源丰富** — Unity Asset Store 大量免费素材
+5. **打包方便** — 直接导出 APK
 
 ---
 
@@ -53,11 +63,13 @@
 
 ## 验收标准
 
-### v0.1 - 原型验证
-- [ ] Flutter 项目搭建完成
-- [ ] 摄像头能正常开启
-- [ ] 能识别深蹲动作
-- [ ] 像素小人能根据动作移动
+### v0.1 - 原型验证 (Unity)
+- [ ] Unity 项目搭建完成
+- [ ] 摄像头能正常开启并显示
+- [ ] 能识别人体姿态（MediaPipe）
+- [ ] 深蹲动作识别准确率 > 70%
+- [ ] 像素小人能显示
+- [ ] 做深蹲时小人能做出攻击动作
 
 ### v0.2 - 双人识别
 - [ ] 能同时识别两个人
@@ -94,12 +106,44 @@
 
 | 版本 | 目标时间 | 状态 |
 |-----|---------|------|
-| v0.1 | 3 天内 | 🔄 进行中 |
+| v0.1 | 3 天内 | 🔄 进行中 (Unity) |
 | v0.2 | 1 周内 | ⏳ 待开始 |
 | v0.3 | 2 周内 | ⏳ 待开始 |
 | v0.4 | 3 周内 | ⏳ 待开始 |
 | v0.5 | 1 个月内 | ⏳ 待开始 |
 | v1.0 | 2 个月内 | ⏳ 待开始 |
+
+---
+
+## Unity 项目结构
+
+```
+Assets/
+├── Scenes/
+│   ├── MainMenu.unity
+│   └── Game.unity
+├── Scripts/
+│   ├── Camera/
+│   │   └── WebcamController.cs
+│   ├── Pose/
+│   │   ├── PoseDetector.cs
+│   │   └── SquatDetector.cs
+│   ├── Game/
+│   │   ├── PlayerController.cs
+│   │   ├── EnemyController.cs
+│   │   └── CombatSystem.cs
+│   └── UI/
+│       └── GameUI.cs
+├── Sprites/
+│   ├── Characters/
+│   ├── Enemies/
+│   └── Effects/
+├── Prefabs/
+│   ├── Player.prefab
+│   └── Enemy.prefab
+└── Plugins/
+    └── MediaPipe/
+```
 
 ---
 
@@ -119,23 +163,8 @@
 
 ---
 
-## 文件结构
-
-```
-fit-dungeon/
-├── PROJECT.md          # 项目概述（本文件）
-├── ACCEPTANCE.md       # 验收标准详情
-├── PROGRESS.md         # 开发进度日志
-├── lib/                # Flutter 代码
-├── assets/             # 像素素材
-├── test/               # 测试代码
-└── builds/             # 打包的 APK
-```
-
----
-
 ## 相关链接
 
-- GitHub 仓库: (待创建)
+- GitHub 仓库: https://github.com/SukeyByte/fit-dungeon
 - 设计文档: ./ACCEPTANCE.md
 - 进度日志: ./PROGRESS.md
