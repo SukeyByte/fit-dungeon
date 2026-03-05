@@ -1,0 +1,43 @@
+name: fit_dungeon
+description: FitDungeon - 双人健身肉鸽游戏
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # 姿态识别
+  google_mlkit_pose_detection: ^0.9.0
+  google_mlkit_commons: ^0.6.0
+  
+  # 相机
+  camera: ^0.10.5+7
+  
+  # 权限
+  permission_handler: ^11.0.1
+  
+  # 状态管理
+  flutter_riverpod: ^2.4.9
+  
+  # 游戏引擎 (可选，先用简单 Canvas)
+  # flame: ^1.15.0
+  
+  # 工具库
+  equatable: ^2.0.5
+  collection: ^1.18.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/sprites/
